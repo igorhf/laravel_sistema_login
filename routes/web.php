@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'usuariosController@login');
+Route::post('realizar_login','usuariosController@realizarLogin');
+
+Route::get('cadastro_usuario', 'usuariosController@cadastroUsuario');
+Route::post('realizar_cadastro', 'usuariosController@realizarCadastro');
