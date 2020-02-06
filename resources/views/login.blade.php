@@ -5,10 +5,14 @@
 @endsection
 
 @section('conteudo')
+
+@include('inc/info_usuario')
+
 <div class="row justify-content-center" style="margin-top:5%">
+
     <div class="col col-lg-4 border">
         <h1>Sistema de login</h1>
-        <form>
+        <form method="POST" action="/realizar_login">
             {{ csrf_field() }}
             <div class="form-group ">
                 <label for="usuario">Usuario:</label>

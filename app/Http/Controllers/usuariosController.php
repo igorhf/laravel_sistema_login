@@ -31,4 +31,20 @@ class usuariosController extends Controller
         $usuario->save();
 
     }
+
+    public function realizarLogin(Request $request){
+        
+        $request->validate([
+            'usuario' => 'required',
+            'senha' => 'required|min:3|max:8'            
+        ]);
+
+        $usuario = usuarios::where('usuario',$request->usuario)->first();
+        if (Hash::check($request->senha, $usuario->senha)) {
+            $request->session()->put('id_usuario', $usuario->id_usuario);
+            $request->session()->put('usuario', $usuario->usuario);
+        }        
+        
+        return view('login', compact('usuario'));
+    }
 }
