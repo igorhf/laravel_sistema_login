@@ -1,3 +1,5 @@
+@if (session()->exists('usuario'))    
+
 <div class="row">
     <div class="col-1 align-self-start" style="position:absolute;top:100px;left:0px">
         <table class="table table-hover">
@@ -19,3 +21,5 @@
           </table>
     </div>    
   </div>
+
+  @endif

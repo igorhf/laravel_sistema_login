@@ -16,3 +16,5 @@ Route::post('realizar_login','usuariosController@realizarLogin');
 
 Route::get('cadastro_usuario', 'usuariosController@cadastroUsuario');
 Route::post('realizar_cadastro', 'usuariosController@realizarCadastro');
+
+Route::get('deslogar', 'usuariosController@deslogar');

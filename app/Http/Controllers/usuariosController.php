@@ -45,6 +45,12 @@ class usuariosController extends Controller
             $request->session()->put('usuario', $usuario->usuario);
         }        
         
-        return view('login', compact('usuario'));
+        return view('/login', compact('usuario'));
     }
+
+    public function deslogar(){
+        session()->flush();        
+        return redirect('/');
+    }
+
 }
