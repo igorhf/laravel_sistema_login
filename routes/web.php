@@ -14,7 +14,7 @@
 Route::get('/', 'usuariosController@login');
 Route::post('realizar_login','usuariosController@realizarLogin');
 
-Route::get('cadastro_usuario', 'usuariosController@cadastroUsuario');
-Route::post('realizar_cadastro', 'usuariosController@realizarCadastro');
+Route::get('cadastro_usuario', 'cadastroController@cadastroUsuario');
+Route::post('realizar_cadastro', 'cadastroController@realizarCadastro');
 
-Route::get('deslogar', 'usuariosController@deslogar');
+Route::get('deslogar', 'deslogarController@deslogar');

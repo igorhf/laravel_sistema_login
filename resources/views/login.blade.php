@@ -11,7 +11,7 @@
 <div class="row justify-content-center" style="margin-top:5%">
 
     <div class="col col-lg-4 border">
-        <h1>Sistema de login</h1>
+        <h1 class="text-center">Sistema de login</h1>
         <form method="POST" action="/realizar_login">
             {{ csrf_field() }}
             <div class="form-group ">
