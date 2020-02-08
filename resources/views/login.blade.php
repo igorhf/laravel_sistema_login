@@ -26,7 +26,7 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <a href="{{ asset('/cadastro_usuario') }}" class="badge badge-secondary">Cadastre-se</a><br>
-        <a href="#" class="badge badge-secondary">Recuperar senha</a>
+        <a href="{{ asset('/recuperar_senha') }}" class="badge badge-secondary">Recuperar senha</a>
     </div>
 </div>
 @endsection
