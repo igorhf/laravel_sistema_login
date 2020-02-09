@@ -2,13 +2,11 @@
 
 @section('conteudo')
 
-@include('inc/info_usuario')
-
 <div class="row justify-content-center" style="margin-top:5%">
-
     <div class="col col-lg-4 border">
         <h1 class="text-center">Recuperar senha</h1>
-        <form method="POST" action="/realizar_login">
+        @include('inc/erros')
+        <form method="POST" action="/email_recuperacao">
             {{ csrf_field() }}
             <div class="form-group ">
                 <label for="email">Email:</label>

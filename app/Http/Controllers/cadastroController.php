@@ -20,6 +20,7 @@ class cadastroController extends Controller
             'cf_senha' => 'required|min:3|max:8',
             'email' => 'required|email'
         ]);
+        // same comparar os campos
         if ($request->senha == $request->cf_senha) {
             $usuario = new usuarios;
             $usuario->usuario = $request->usuario;

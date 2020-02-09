@@ -20,3 +20,4 @@ Route::post('realizar_cadastro', 'cadastroController@realizarCadastro');
 Route::get('deslogar', 'deslogarController@deslogar');
 
 Route::get('recuperar_senha', 'emailController@email');
+Route::post('email_recuperacao', 'emailController@emailRecuperacao');

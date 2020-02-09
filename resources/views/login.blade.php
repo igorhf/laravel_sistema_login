@@ -12,6 +12,8 @@
 
     <div class="col col-lg-4 border">
         <h1 class="text-center">Sistema de login</h1>
+        @include('inc/erros')
+
         <form method="POST" action="/realizar_login">
             {{ csrf_field() }}
             <div class="form-group ">
