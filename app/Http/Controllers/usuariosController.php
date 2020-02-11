@@ -16,7 +16,7 @@ class usuariosController extends Controller
         
         $request->validate([
             'usuario' => 'required',
-            'senha' => 'required|min:3|max:8'            
+            'senha' => 'required|min:3|max:10'            
         ]);
 
         $usuario = usuarios::where('usuario',$request->usuario)->first();
@@ -31,7 +31,7 @@ class usuariosController extends Controller
                 $msg_erro = "Senha invalidar";
             }
         }else{
-            $msg_erro = "Usuario ja existe";
+            $msg_erro = "Usuario nao existe";
         }
                 
         

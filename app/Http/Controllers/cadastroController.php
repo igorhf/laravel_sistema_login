@@ -16,8 +16,8 @@ class cadastroController extends Controller
         
         $request->validate([
             'usuario' => 'required',
-            'senha' => 'required|min:3|max:8',
-            'cf_senha' => 'required|min:3|max:8',
+            'senha' => 'required|min:3|max:10',
+            'cf_senha' => 'required|min:3|max:10',
             'email' => 'required|email'
         ]);
         // same comparar os campos
