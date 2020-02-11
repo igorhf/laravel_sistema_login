@@ -6,6 +6,7 @@
     <div class="col col-lg-4 border">
         <h1 class="text-center">Recuperar senha</h1>
         @include('inc/erros')
+        @include('inc/msg')
         <form method="POST" action="/email_recuperacao">
             {{ csrf_field() }}
             <div class="form-group ">

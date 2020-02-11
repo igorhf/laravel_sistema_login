@@ -20,12 +20,22 @@ class usuariosController extends Controller
         ]);
 
         $usuario = usuarios::where('usuario',$request->usuario)->first();
-        if (Hash::check($request->senha, $usuario->senha)) {
-            $request->session()->put('id_usuario', $usuario->id_usuario);
-            $request->session()->put('usuario', $usuario->usuario);
-        }        
+
+        if (count($usuario) != 0) {
+            if (Hash::check($request->senha, $usuario->senha)) {
+                $request->session()->put('id_usuario', $usuario->id_usuario);
+                $request->session()->put('usuario', $usuario->usuario);
+
+                $msg = "";
+            }else {
+                $msg_erro = "Senha invalidar";
+            }
+        }else{
+            $msg_erro = "Usuario ja existe";
+        }
+                
         
-        return view('/login', compact('usuario'));
+        return view('/login', compact('usuario','msg_erro'));
     }
 
     
