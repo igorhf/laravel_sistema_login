@@ -21,12 +21,12 @@ class usuariosController extends Controller
 
         $usuario = usuarios::where('usuario',$request->usuario)->first();
 
-        if (count($usuario) != 0) {
+        if ($usuario->count() != 0) {
             if (Hash::check($request->senha, $usuario->senha)) {
                 $request->session()->put('id_usuario', $usuario->id_usuario);
                 $request->session()->put('usuario', $usuario->usuario);
 
-                $msg = "";
+                $msg_erro = "";
             }else {
                 $msg_erro = "Senha invalidar";
             }
