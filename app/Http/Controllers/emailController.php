@@ -28,7 +28,8 @@ class emailController extends Controller
             $usuario->senha = Hash::make($nova_senha);
             $usuario->save();
             Mail::to($request->email)->send(new emailRecuperarSenha($nova_senha));
-            return view("/recuperar_senha");
+            $msg = "Nova senha enviado para o email informado";
+            return view("/recuperar_senha",compact('msg'));
         }else {
             $msg_erro = "email nao existe";
         }
